@@ -1,101 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sabor y Salud | Progress Tracker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Track your wellness progress across movement, nutrition, and mindset with this simple interactive progress tracker.">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Progress Tracker | Sabor y Salud</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header class="site-header">
-    <div class="logo-bar">
-        <div class="logo-mark-wrap">
-            <span class="logo-mark">SyS</span>
-        </div>
-        <div class="logo-text">
-            <h1>Sabor y Salud</h1>
-            <p class="tagline">Track your growth, not perfection.</p>
-        </div>
-    </div>
-    <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="wellness.html">Wellness Hub</a>
-        <a href="recipes.html">Recipes</a>
-        <a href="progress.html" class="active">Progress Tracker</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+  <h1>Sabor y Salud</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="wellness.html">Wellness Hub</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="progress.html">Progress Tracker</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 </header>
 
-<main>
-    <section class="page-intro">
-        <h2>Wellness Progress Tracker</h2>
-        <p>
-            Use this interactive tracker to log your movement, nutrition focus, and mood.
-            Your entries are saved in your browser using localStorage — no login, no account,
-            just your private check-ins on this device.
-        </p>
-    </section>
+<main class="container">
+  <h2>Progress Tracker</h2>
 
-    <section class="card">
-        <h3>Add a New Entry</h3>
-        <form id="tracker-form" class="tracker-form">
-            <div class="form-row">
-                <div>
-                    <label for="date">Date</label>
-                    <input id="date" type="date" name="date" required>
-                </div>
-                <div>
-                    <label for="movement">Movement</label>
-                    <input id="movement" type="text" name="movement" placeholder="30-min walk, full-body lift, yoga..." required>
-                </div>
-            </div>
+  <label>Exercise:</label><br>
+  <input id="exercise" type="text"><br><br>
 
-            <label for="nutrition">Nutrition Focus</label>
-            <input id="nutrition" type="text" name="nutrition" placeholder="More veggies, protein goal, balanced plate..." required>
+  <label>Reps:</label><br>
+  <input id="reps" type="number"><br><br>
 
-            <label for="mood">Mood / Energy</label>
-            <input id="mood" type="text" name="mood" placeholder="Calm, tired, focused, stressed..." required>
+  <button onclick="addEntry()">Save Progress</button>
 
-            <label for="reflection">Reflection / Notes</label>
-            <textarea id="reflection" name="reflection" rows="3" placeholder="What helped you feel your best today?"></textarea>
-
-            <div class="tracker-actions">
-                <button type="submit" class="btn primary">Add Entry</button>
-                <button type="button" id="clear-tracker" class="btn secondary">Clear All Entries</button>
-            </div>
-        </form>
-        <p class="helper-text">
-            Tip: You don’t have to fill this in every single day. Use it 2–3 times a week to stay aware and compassionate with yourself.
-        </p>
-    </section>
-
-    <section class="table-wrapper">
-        <table id="tracker-table">
-            <caption>Your Logged Entries</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Date</th>
-                    <th scope="col">Movement</th>
-                    <th scope="col">Nutrition</th>
-                    <th scope="col">Mood / Energy</th>
-                    <th scope="col">Reflection</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- JS will inject rows here -->
-            </tbody>
-        </table>
-        <p id="no-entries-message" class="helper-text">
-            No entries yet. Add your first check-in above. 💛
-        </p>
-    </section>
+  <ul id="log"></ul>
 </main>
 
-<footer class="site-footer">
-    <p>&copy; 2025 Sabor y Salud. All rights reserved.</p>
+<script>
+  function addEntry() {
+    const exercise = document.getElementById("exercise").value;
+    const reps = document.getElementById("reps").value;
+
+    const log = document.getElementById("log");
+    const entry = document.createElement("li");
+
+    entry.textContent = exercise + " - " + reps + " reps";
+    log.appendChild(entry);
+  }
+</script>
+
+<footer>
+  <p>© 2025 Sabor y Salud</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
