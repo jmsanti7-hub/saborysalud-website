@@ -1,95 +1,184 @@
-/* Global page styles */
+/* ---------- Base Page Styling ---------- */
+
+:root {
+  --bg-main: #f7f6f4;      /* soft warm beige */
+  --bg-card: #ffffff;      /* white card */
+  --border-soft: #e1ddd7;  /* light border */
+  --text-main: #2f2f2f;    /* dark neutral */
+  --text-muted: #6b6460;   /* soft taupe */
+
+  /* Accent colors */
+  --accent-clay: #b47b62;  /* warm clay */
+  --accent-clay-dark: #8f5f45;
+  --accent-sage: #a3b59a;  /* soft sage */
+  --accent-brown: #6a5849; /* warm brown */
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4;
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
   margin: 0;
   padding: 0;
 }
 
-/* Header */
+/* ---------- Header ---------- */
+
 .site-header {
-  background-color: #2c3e50;
-  color: #ffffff;
-  padding: 20px;
+  background: linear-gradient(135deg, #ece7e1, #e1d7cf);
   text-align: center;
+  padding: 40px 20px 24px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: 1px;
+  color: var(--accent-brown);
 }
 
 .site-header p {
-  margin: 5px 0 0;
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--text-muted);
 }
 
-/* Navigation */
+/* ---------- Navigation ---------- */
+
 nav {
-  background-color: #34495e;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-soft);
   text-align: center;
   padding: 10px 0;
 }
 
 nav a {
-  color: #ffffff;
   text-decoration: none;
+  color: var(--text-main);
   margin: 0 15px;
+  font-size: 15px;
   font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  border-radius: 999px;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: var(--accent-brown);
+  background-color: #f0ece8;
 }
 
-/* Main content container */
+/* ---------- Main Layout Container ---------- */
+
 .container {
+  width: 85%;
   max-width: 900px;
-  background-color: #ffffff;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 40px auto;
+  background-color: var(--bg-card);
+  padding: 32px 32px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Headings */
-h1 {
-  margin-bottom: 10px;
-}
+/* ---------- Headings & Text ---------- */
 
 h2 {
-  color: #2c3e50;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 5px;
+  font-size: 26px;
+  border-bottom: 1px solid #e3dfdb;
+  padding-bottom: 8px;
+  margin-top: 30px;
+  color: var(--accent-brown);
 }
 
-/* Paragraphs */
-p {
+h3 {
+  margin-top: 22px;
+  font-size: 20px;
+  color: var(--accent-clay-dark);
+}
+
+p, li {
+  font-size: 16px;
   line-height: 1.6;
+  color: var(--text-main);
 }
 
-/* Lists */
-ul {
-  margin-left: 20px;
+ul, ol {
+  padding-left: 22px;
 }
 
-/* ---------- FORM STYLES (Progress page, etc.) ---------- */
+/* ---------- Cozy Card Sections ---------- */
 
-form {
-  margin-top: 15px;
+.card {
+  background-color: #fbfaf8;
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 18px 20px;
+  margin-top: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
-label {
-  font-weight: bold;
+.card h3 {
+  margin-top: 0;
+}
+
+/* ---------- Buttons (soft, pill-shaped) ---------- */
+
+button,
+.btn {
   display: inline-block;
-  margin-bottom: 4px;
-}
-
-input[type="text"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  max-width: 400px;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #cccccc;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
   font-family: inherit;
   font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+/* Primary clay button */
+.btn-primary,
+button[type="submit"] {
+  background-color: var(--accent-clay);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(180, 123, 98, 0.35);
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover {
+  background-color: var(--accent-clay-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(180, 123, 98, 0.45);
+}
+
+/* Outline / soft sage button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent-brown);
+  border: 1px solid var(--accent-sage);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background-color: #f1f3ef;
+}
+
+/* ---------- Inputs & Textareas ---------- */
+
+input,
+textarea,
+select {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #d2cec9;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  background-color: #fbfaf8;
   box-sizing: border-box;
 }
 
@@ -97,19 +186,29 @@ textarea {
   resize: vertical;
 }
 
-button[type="submit"],
-button {
-  background-color: #2c3e50;
-  color: #ffffff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 12px;
   font-size: 14px;
-  cursor: pointer;
-  margin-top: 8px;
+  color: var(--accent-brown);
 }
 
-button[type="submit"]:hover,
-button:hover {
-  background-color: #1f2b3a;
+/* ---------- Progress Tracker Entries (if you ever list them) ---------- */
+
+.tracker-entry {
+  background-color: #f9f8f6;
+  padding: 12px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  margin-top: 10px;
+}
+
+/* ---------- Footer (optional) ---------- */
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin: 40px 0 20px;
 }
