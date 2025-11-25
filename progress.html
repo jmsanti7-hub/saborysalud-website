@@ -23,34 +23,120 @@
 
 <main class="container">
 
+  <h2>Weekly Workout Plan</h2>
+
+  <section class="card">
+    <p>
+      This is a simple, flexible weekly structure you can follow. Adjust sets,
+      reps, and exercises based on your equipment and energy.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Focus</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monday</td>
+          <td>Lower Body Strength</td>
+          <td>Squats, lunges, glute bridges, calf raises</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>Upper Body Strength</td>
+          <td>Push-ups, rows, shoulder presses, bicep curls</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>Active Recovery</td>
+          <td>Walk, stretching, gentle yoga</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>Full-Body Strength</td>
+          <td>Deadlifts, rows, squats, core work</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>Cardio + Core</td>
+          <td>Intervals (walk/jog), planks, dead bugs</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>Fun Movement</td>
+          <td>Dancing, hiking, sports, long walk</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>Rest</td>
+          <td>Stretch, relax, reset for the week</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
   <h2>Progress Tracker</h2>
-  <p>Use this space to track your movement, habits, and wellness goals.</p>
 
-  <form>
-    <label for="exercise">Exercise Completed:</label><br>
-    <input type="text" id="exercise" name="exercise"><br><br>
+  <section class="card">
+    <p>
+      Use this tracker to log your workouts and how you felt. This is just
+      for you — small wins still count.
+    </p>
 
-    <label for="minutes">Minutes of Activity:</label><br>
-    <input type="number" id="minutes" name="minutes"><br><br>
+    <form id="progress-form">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date">
 
-    <label for="water">Cups of Water Drank:</label><br>
-    <input type="number" id="water" name="water"><br><br>
+      <label for="workout">Workout / Focus</label>
+      <input type="text" id="workout" name="workout" placeholder="Leg day, walk, yoga, etc.">
 
-    <label for="mood">How do you feel today?</label><br>
-    <select id="mood" name="mood">
-      <option>Great</option>
-      <option>Okay</option>
-      <option>Tired</option>
-      <option>Stressed</option>
-    </select><br><br>
+      <label for="duration">Duration (minutes)</label>
+      <input type="number" id="duration" name="duration" placeholder="30">
 
-    <label for="notes">Notes:</label><br>
-    <textarea id="notes" name="notes" rows="4" cols="30"></textarea><br><br>
+      <label for="feeling">How did you feel?</label>
+      <input type="text" id="feeling" name="feeling" placeholder="Strong, tired, proud, etc.">
 
-    <button type="submit">Save Progress</button>
-  </form>
+      <button type="submit" class="btn btn-primary">Add Entry</button>
+    </form>
+
+    <div id="entries"></div>
+  </section>
 
 </main>
+
+<script>
+  const form = document.getElementById('progress-form');
+  const entriesDiv = document.getElementById('entries');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const date = document.getElementById('date').value;
+    const workout = document.getElementById('workout').value;
+    const duration = document.getElementById('duration').value;
+    const feeling = document.getElementById('feeling').value;
+
+    if (!workout && !duration && !feeling && !date) {
+      return;
+    }
+
+    const entry = document.createElement('div');
+    entry.className = 'tracker-entry';
+    entry.innerHTML = `
+      <strong>${date || 'No date'}</strong><br>
+      Workout: ${workout || 'N/A'}<br>
+      Duration: ${duration ? duration + ' min' : 'N/A'}<br>
+      Feeling: ${feeling || 'N/A'}
+    `;
+
+    entriesDiv.prepend(entry);
+    form.reset();
+  });
+</script>
 
 </body>
 </html>
