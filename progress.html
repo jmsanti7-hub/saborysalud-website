@@ -2,52 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Progress Tracker | Sabor y Salud</title>
+  <title>Progress Tracker - Sabor y Salud</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="site-header">
   <h1>Sabor y Salud</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="wellness.html">Wellness Hub</a>
-    <a href="recipes.html">Recipes</a>
-    <a href="progress.html">Progress Tracker</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <p>Track your growth. Celebrate your wins.</p>
 </header>
 
+<nav>
+  <a href="index.html">Home</a>
+  <a href="wellness.html">Wellness Hub</a>
+  <a href="recipes.html">Recipes</a>
+  <a href="progress.html">Progress Tracker</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
 <main class="container">
+
   <h2>Progress Tracker</h2>
+  <p>Use this space to track your movement, habits, and wellness goals.</p>
 
-  <label>Exercise:</label><br>
-  <input id="exercise" type="text"><br><br>
+  <form>
+    <label for="exercise">Exercise Completed:</label><br>
+    <input type="text" id="exercise" name="exercise"><br><br>
 
-  <label>Reps:</label><br>
-  <input id="reps" type="number"><br><br>
+    <label for="minutes">Minutes of Activity:</label><br>
+    <input type="number" id="minutes" name="minutes"><br><br>
 
-  <button onclick="addEntry()">Save Progress</button>
+    <label for="water">Cups of Water Drank:</label><br>
+    <input type="number" id="water" name="water"><br><br>
 
-  <ul id="log"></ul>
+    <label for="mood">How do you feel today?</label><br>
+    <select id="mood" name="mood">
+      <option>Great</option>
+      <option>Okay</option>
+      <option>Tired</option>
+      <option>Stressed</option>
+    </select><br><br>
+
+    <label for="notes">Notes:</label><br>
+    <textarea id="notes" name="notes" rows="4" cols="30"></textarea><br><br>
+
+    <button type="submit">Save Progress</button>
+  </form>
+
 </main>
-
-<script>
-  function addEntry() {
-    const exercise = document.getElementById("exercise").value;
-    const reps = document.getElementById("reps").value;
-
-    const log = document.getElementById("log");
-    const entry = document.createElement("li");
-
-    entry.textContent = exercise + " - " + reps + " reps";
-    log.appendChild(entry);
-  }
-</script>
-
-<footer>
-  <p>© 2025 Sabor y Salud</p>
-</footer>
 
 </body>
 </html>
