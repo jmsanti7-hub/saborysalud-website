@@ -2,30 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | Sabor y Salud</title>
+  <title>Contact - Sabor y Salud</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="site-header">
   <h1>Sabor y Salud</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="wellness.html">Wellness Hub</a>
-    <a href="recipes.html">Recipes</a>
-    <a href="progress.html">Progress Tracker</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <p>Let’s connect about your wellness journey.</p>
 </header>
 
-<main class="container">
-  <h2>Contact</h2>
-  <p>Email: hello@saborysalud.com</p>
-</main>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="wellness.html">Wellness Hub</a>
+  <a href="recipes.html">Recipes</a>
+  <a href="progress.html">Progress Tracker</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-<footer>
-  <p>© 2025 Sabor y Salud</p>
-</footer>
+<main class="container">
+
+  <h2>Contact</h2>
+
+  <section class="card">
+    <h3>Contact Information</h3>
+    <p><strong>Name:</strong> Joyce Santiago</p>
+    <p><strong>Email:</strong> joyce@saborysalud.com (demo)</p>
+    <p><strong>Location:</strong> Orlando, Florida (USA)</p>
+    <p><strong>Instagram:</strong> @saborysalud (demo)</p>
+    <p><strong>Availability:</strong> By appointment for virtual coaching and future wellness services.</p>
+  </section>
+
+  <section class="card">
+    <h3>Get in Touch</h3>
+    <p>
+      This form is for demonstration and educational purposes. In a future version,
+      it could be connected to a real email or coaching platform.
+    </p>
+
+    <form>
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Your name">
+
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="you@example.com">
+
+      <label for="topic">Reason for Reaching Out</label>
+      <select id="topic" name="topic">
+        <option value="">Select an option</option>
+        <option>General question</option>
+        <option>Nutrition guidance</option>
+        <option>Workout support</option>
+        <option>Future coaching interest</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Tell me a bit about your goals or questions..."></textarea>
+
+      <button type="submit" class="btn btn-primary">Send (Demo)</button>
+    </form>
+  </section>
+
+</main>
 
 </body>
 </html>
