@@ -8,10 +8,10 @@
   --text-muted: #6b6460;   /* soft taupe */
 
   /* Accent colors */
-  --accent-clay: #b47b62;  /* warm clay */
-  --accent-clay-dark: #8f5f45;
-  --accent-sage: #a3b59a;  /* soft sage */
-  --accent-brown: #6a5849; /* warm brown */
+  --accent-clay: #b47b62;       /* warm clay */
+  --accent-clay-dark: #8f5f45;  /* deeper clay */
+  --accent-sage: #a6b9a0;       /* soft sage */
+  --accent-brown: #6a5849;      /* warm brown */
 }
 
 body {
@@ -60,7 +60,7 @@ nav a {
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 0.5px;
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 999px;
 }
 
@@ -95,6 +95,12 @@ h3 {
   margin-top: 22px;
   font-size: 20px;
   color: var(--accent-clay-dark);
+}
+
+h4 {
+  margin-top: 18px;
+  font-size: 17px;
+  color: var(--accent-brown);
 }
 
 p, li {
@@ -194,7 +200,27 @@ label {
   color: var(--accent-brown);
 }
 
-/* ---------- Progress Tracker Entries (if you ever list them) ---------- */
+/* ---------- Tables (for workout plan) ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+th, td {
+  border: 1px solid var(--border-soft);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f1eee9;
+  color: var(--accent-brown);
+}
+
+/* ---------- Progress entries list ---------- */
 
 .tracker-entry {
   background-color: #f9f8f6;
