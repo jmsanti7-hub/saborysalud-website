@@ -1,3 +1,4 @@
+/* Global page styles */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f4f4;
@@ -8,9 +9,13 @@ body {
 /* Header */
 .site-header {
   background-color: #2c3e50;
-  color: white;
+  color: #ffffff;
   padding: 20px;
   text-align: center;
+}
+
+.site-header p {
+  margin: 5px 0 0;
 }
 
 /* Navigation */
@@ -21,7 +26,7 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
@@ -31,14 +36,14 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Main container */
+/* Main content container */
 .container {
   max-width: 900px;
-  background-color: white;
+  background-color: #ffffff;
   margin: 30px auto;
   padding: 25px;
   border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 /* Headings */
@@ -60,4 +65,51 @@ p {
 /* Lists */
 ul {
   margin-left: 20px;
+}
+
+/* ---------- FORM STYLES (Progress page, etc.) ---------- */
+
+form {
+  margin-top: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"],
+button {
+  background-color: #2c3e50;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button[type="submit"]:hover,
+button:hover {
+  background-color: #1f2b3a;
 }
