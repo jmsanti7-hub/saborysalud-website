@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Sabor y Salud</title>
+  <meta name="description" content="Connect with Sabor y Salud to ask questions about wellness, movement, and nutrition support.">
+  <meta name="keywords" content="contact, Sabor y Salud, wellness coach, email form">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,45 +29,51 @@
   <h2>Contact</h2>
 
   <section class="card">
-    <h3>Contact Information</h3>
-    <p><strong>Name:</strong> Joyce Santiago</p>
-    <p><strong>Email:</strong> joyce@saborysalud.com (demo)</p>
-    <p><strong>Location:</strong> Orlando, Florida (USA)</p>
-    <p><strong>Instagram:</strong> @saborysalud (demo)</p>
-    <p><strong>Availability:</strong> By appointment for virtual coaching and future wellness services.</p>
+    <p>
+      Have a question about recipes, movement, or how to start your own wellness
+      journey? Use the form below to reach out.
+    </p>
+    <p>
+      You can also email me directly at
+      <a href="mailto:saborysalud@example.com">saborysalud@example.com</a>.
+    </p>
   </section>
 
   <section class="card">
-    <h3>Get in Touch</h3>
-    <p>
-      This form is for demonstration and educational purposes. In a future version,
-      it could be connected to a real email or coaching platform.
-    </p>
+    <h3>Contact Form</h3>
 
-    <form>
+    <form action="#" method="post">
       <label for="name">Name</label>
-      <input id="name" type="text" name="name" placeholder="Your name">
+      <input id="name" name="name" type="text" required>
 
       <label for="email">Email</label>
-      <input id="email" type="email" name="email" placeholder="you@example.com">
+      <input id="email" name="email" type="email" required>
 
-      <label for="topic">Reason for Reaching Out</label>
-      <select id="topic" name="topic">
-        <option value="">Select an option</option>
-        <option>General question</option>
-        <option>Nutrition guidance</option>
-        <option>Workout support</option>
-        <option>Future coaching interest</option>
+      <label for="topic">Topic</label>
+      <select id="topic" name="topic" required>
+        <option value="">Select a topic</option>
+        <option value="recipes">Recipes</option>
+        <option value="workouts">Workout support</option>
+        <option value="coaching">Future coaching interest</option>
+        <option value="other">Other</option>
       </select>
 
       <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" placeholder="Tell me a bit about your goals or questions..."></textarea>
+      <textarea id="message" name="message" rows="4"
+        placeholder="Tell me a bit about your goals or questions"></textarea>
 
       <button type="submit" class="btn btn-primary">Send (Demo)</button>
     </form>
   </section>
 
 </main>
+
+<footer>
+  <p>&copy; 2025 Sabor y Salud. All rights reserved.</p>
+  <p>For more wellness resources, visit
+    <a href="https://www.asu.edu" target="_blank">Arizona State University</a>.
+  </p>
+</footer>
 
 </body>
 </html>

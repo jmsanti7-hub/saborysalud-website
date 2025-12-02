@@ -1,21 +1,36 @@
-/* ---------- Base Page Styling ---------- */
+/* =========================================
+   SABOR Y SALUD – COZY SAGE + SAND THEME
+   ========================================= */
+
+/* ---------- Color System ---------- */
 
 :root {
-  --bg-main: #f7f6f4;      /* soft warm beige */
-  --bg-card: #ffffff;      /* white card */
-  --border-soft: #e1ddd7;  /* light border */
-  --text-main: #2f2f2f;    /* dark neutral */
-  --text-muted: #6b6460;   /* soft taupe */
+  /* Neutrals */
+  --bg-main: #f6f1e9;       /* soft sand page background */
+  --bg-card: #ffffff;       /* card background */
+  --border-soft: #e2d9cf;   /* gentle border */
+  --text-main: #2f2f2f;     /* dark neutral */
+  --text-muted: #6b6460;    /* taupe */
 
-  /* Accent colors */
-  --accent-clay: #b47b62;       /* warm clay */
-  --accent-clay-dark: #8f5f45;  /* deeper clay */
-  --accent-sage: #a6b9a0;       /* soft sage */
-  --accent-brown: #6a5849;      /* warm brown */
+  /* Accents */
+  --accent-sage: #a7bba3;        /* soft sage */
+  --accent-sage-deep: #8ea28a;   /* deeper sage */
+  --accent-clay: #b67c63;        /* warm clay */
+  --accent-clay-dark: #925e45;   /* deeper clay */
+  --accent-brown: #5a4636;       /* rich brown for titles */
+}
+
+/* ---------- Base Page Styling ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   background-color: var(--bg-main);
   color: var(--text-main);
   margin: 0;
@@ -25,9 +40,9 @@ body {
 /* ---------- Header ---------- */
 
 .site-header {
-  background: linear-gradient(135deg, #ece7e1, #e1d7cf);
+  background: linear-gradient(135deg, #f0e4d7, #e4d3c3);
   text-align: center;
-  padding: 40px 20px 24px;
+  padding: 40px 20px 26px;
   border-bottom: 1px solid var(--border-soft);
 }
 
@@ -36,6 +51,7 @@ body {
   font-size: 36px;
   letter-spacing: 1px;
   color: var(--accent-brown);
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .site-header p {
@@ -51,50 +67,60 @@ nav {
   border-bottom: 1px solid var(--border-soft);
   text-align: center;
   padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 nav a {
   text-decoration: none;
   color: var(--text-main);
-  margin: 0 15px;
+  margin: 0 14px;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: 0.5px;
-  padding: 4px 10px;
+  padding: 6px 14px;
   border-radius: 999px;
+  transition: background-color 0.18s ease, color 0.18s ease,
+    box-shadow 0.18s ease, transform 0.1s ease;
 }
 
 nav a:hover {
-  color: var(--accent-brown);
-  background-color: #f0ece8;
+  color: #ffffff;
+  background-color: var(--accent-sage);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
 }
 
 /* ---------- Main Layout Container ---------- */
 
 .container {
-  width: 85%;
-  max-width: 900px;
-  margin: 40px auto;
+  width: 88%;
+  max-width: 960px;
+  margin: 32px auto 42px;
   background-color: var(--bg-card);
-  padding: 32px 32px 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  padding: 30px 30px 40px;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
 }
 
 /* ---------- Headings & Text ---------- */
 
 h2 {
   font-size: 26px;
-  border-bottom: 1px solid #e3dfdb;
+  border-bottom: 1px solid var(--border-soft);
   padding-bottom: 8px;
-  margin-top: 30px;
+  margin-top: 4px;
+  margin-bottom: 12px;
   color: var(--accent-brown);
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 h3 {
   margin-top: 22px;
   font-size: 20px;
   color: var(--accent-clay-dark);
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 h4 {
@@ -103,13 +129,15 @@ h4 {
   color: var(--accent-brown);
 }
 
-p, li {
+p,
+li {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-main);
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 22px;
 }
 
@@ -118,30 +146,47 @@ ul, ol {
 .card {
   background-color: #fbfaf8;
   border: 1px solid var(--border-soft);
-  border-radius: 18px;
-  padding: 18px 20px;
+  border-radius: 20px;
+  padding: 18px 20px 20px;
   margin-top: 18px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
 }
 
 .card h3 {
   margin-top: 0;
 }
 
-/* ---------- Buttons (soft, pill-shaped) ---------- */
+/* Flex card for About + photo */
+.card-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-flex .card-text {
+  flex: 1 1 230px;
+}
+
+.card-flex .card-media {
+  flex: 0 0 260px;
+}
+
+/* ---------- Buttons ---------- */
 
 button,
 .btn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 999px;
   border: none;
   font-family: inherit;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   margin-top: 12px;
-  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease,
+    box-shadow 0.2s ease;
 }
 
 /* Primary clay button */
@@ -149,17 +194,17 @@ button,
 button[type="submit"] {
   background-color: var(--accent-clay);
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(180, 123, 98, 0.35);
+  box-shadow: 0 4px 12px rgba(182, 124, 99, 0.4);
 }
 
 .btn-primary:hover,
 button[type="submit"]:hover {
   background-color: var(--accent-clay-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(180, 123, 98, 0.45);
+  box-shadow: 0 6px 16px rgba(182, 124, 99, 0.55);
 }
 
-/* Outline / soft sage button */
+/* Outline sage button */
 .btn-outline {
   background-color: transparent;
   color: var(--accent-brown);
@@ -177,15 +222,26 @@ input,
 textarea,
 select {
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   padding: 10px;
   margin-top: 6px;
-  border: 1px solid #d2cec9;
-  border-radius: 10px;
+  border: 1px solid #d4cec7;
+  border-radius: 12px;
   font-family: inherit;
   font-size: 14px;
-  background-color: #fbfaf8;
+  background-color: #fdfbf8;
   box-sizing: border-box;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-sage);
+  box-shadow: 0 0 0 3px rgba(167, 187, 163, 0.25);
+  background-color: #ffffff;
 }
 
 textarea {
@@ -193,23 +249,24 @@ textarea {
 }
 
 label {
-  font-weight: bold;
+  font-weight: 600;
   display: block;
   margin-top: 12px;
   font-size: 14px;
   color: var(--accent-brown);
 }
 
-/* ---------- Tables (for workout plan) ---------- */
+/* ---------- Tables (Workout + Tracker) ---------- */
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 15px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid var(--border-soft);
   padding: 8px 10px;
   text-align: left;
@@ -220,8 +277,11 @@ th {
   color: var(--accent-brown);
 }
 
-/* ---------- Progress entries list ---------- */
+tr:nth-child(even) td {
+  background-color: #fbf8f3;
+}
 
+/* Placeholder style for JS tracker entries if needed */
 .tracker-entry {
   background-color: #f9f8f6;
   padding: 12px 14px;
@@ -237,6 +297,7 @@ th {
   display: block;
   border-radius: 18px;
   margin-top: 16px;
+  margin-bottom: 18px;
 }
 
 .about-photo {
@@ -246,36 +307,28 @@ th {
   display: block;
 }
 
-.card-flex {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-}
-
-.card-flex .card-text {
-  flex: 1 1 220px;
-}
-
-.card-flex .card-media {
-  flex: 0 0 260px;
-}
+/* Recipe images */
 
 .recipe-gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 18px;
   justify-content: center;
 }
 
-.recipe-gallery img {
+.recipe-photo {
   width: 100%;
   max-width: 280px;
   border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
 }
+
+/* Progress page graphic */
 
 .progress-image-wrapper {
   text-align: center;
+  margin-bottom: 12px;
 }
 
 .progress-image-wrapper img {
@@ -285,10 +338,25 @@ th {
 }
 
 /* Video styling */
-video {
-  max-width: 100%;
+
+.video-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  align-items: center;
+}
+
+.wellness-video,
+.video-card video {
+  flex: 1 1 260px;
+  max-width: 380px;
+  width: 100%;
   border-radius: 18px;
-  margin-top: 10px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+.video-card-text {
+  flex: 1 1 220px;
 }
 
 /* ---------- Footer ---------- */
@@ -297,7 +365,11 @@ footer {
   text-align: center;
   font-size: 14px;
   color: #777;
-  margin: 40px 0 20px;
+  margin: 0 0 24px;
+}
+
+footer p {
+  margin: 6px 0;
 }
 
 footer a {
@@ -309,11 +381,37 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Responsive tweak ---------- */
+/* ---------- Responsive Tweaks ---------- */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .container {
     width: 92%;
-    padding: 24px 18px 32px;
+    padding: 24px 18px 30px;
+  }
+
+  .card-flex,
+  .video-card {
+    flex-direction: column;
+  }
+
+  .site-header h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 520px) {
+  nav a {
+    display: inline-block;
+    margin: 4px 6px;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 16px 14px 18px;
   }
 }

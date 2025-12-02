@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progress Tracker - Sabor y Salud</title>
+  <meta name="description" content="Use the Sabor y Salud progress tracker to log workouts, nutrition, mood, and reflections and celebrate small wins over time.">
+  <meta name="keywords" content="progress tracker, fitness log, workout plan, discipline and consistency">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,6 +33,10 @@
       This is a simple, flexible weekly structure you can follow. Adjust sets,
       reps, and exercises based on your equipment and energy.
     </p>
+
+    <div class="progress-image-wrapper">
+      <img src="discipline.jpg" alt="Graphic that says discipline and consistency" class="full-width-image">
+    </div>
 
     <table>
       <thead>
@@ -83,60 +90,59 @@
 
   <section class="card">
     <p>
-      Use this tracker to log your workouts and how you felt. This is just
-      for you — small wins still count.
+      Use this tracker to log your movement, nutrition, mood, and reflections.
+      This is just for you — small wins still count.
     </p>
 
-    <form id="progress-form">
+    <form id="tracker-form" action="#" method="post">
       <label for="date">Date</label>
-      <input type="date" id="date" name="date">
+      <input type="date" id="date" name="date" required>
 
-      <label for="workout">Workout / Focus</label>
-      <input type="text" id="workout" name="workout" placeholder="Leg day, walk, yoga, etc.">
+      <label for="movement">Movement</label>
+      <input type="text" id="movement" name="movement" placeholder="Leg day, walk, yoga, etc." required>
 
-      <label for="duration">Duration (minutes)</label>
-      <input type="number" id="duration" name="duration" placeholder="30">
+      <label for="nutrition">Nutrition</label>
+      <input type="text" id="nutrition" name="nutrition" placeholder="High-protein dinner, more veggies, etc." required>
 
-      <label for="feeling">How did you feel?</label>
-      <input type="text" id="feeling" name="feeling" placeholder="Strong, tired, proud, etc.">
+      <label for="mood">Mood / Energy</label>
+      <input type="text" id="mood" name="mood" placeholder="Strong, tired, proud, etc." required>
+
+      <label for="reflection">Reflection (optional)</label>
+      <textarea id="reflection" name="reflection" rows="3" placeholder="What did you notice about today?"></textarea>
 
       <button type="submit" class="btn btn-primary">Add Entry</button>
+      <button type="button" id="clear-tracker" class="btn btn-outline">Clear All Entries</button>
     </form>
 
-    <div id="entries"></div>
+    <p id="no-entries-message" style="font-size: 14px; color: #6b6460; margin-top: 12px;">
+      No entries yet. Log your first win to see it here.
+    </p>
+
+    <table id="tracker-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Movement</th>
+          <th>Nutrition</th>
+          <th>Mood</th>
+          <th>Reflection</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filled by JavaScript -->
+      </tbody>
+    </table>
   </section>
 
 </main>
 
-<script>
-  const form = document.getElementById('progress-form');
-  const entriesDiv = document.getElementById('entries');
+<footer>
+  <p>&copy; 2025 Sabor y Salud. All rights reserved.</p>
+  <p>For more wellness resources, visit
+    <a href="https://www.asu.edu" target="_blank">Arizona State University</a>.
+  </p>
+</footer>
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const date = document.getElementById('date').value;
-    const workout = document.getElementById('workout').value;
-    const duration = document.getElementById('duration').value;
-    const feeling = document.getElementById('feeling').value;
-
-    if (!workout && !duration && !feeling && !date) {
-      return;
-    }
-
-    const entry = document.createElement('div');
-    entry.className = 'tracker-entry';
-    entry.innerHTML = `
-      <strong>${date || 'No date'}</strong><br>
-      Workout: ${workout || 'N/A'}<br>
-      Duration: ${duration ? duration + ' min' : 'N/A'}<br>
-      Feeling: ${feeling || 'N/A'}
-    `;
-
-    entriesDiv.prepend(entry);
-    form.reset();
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
