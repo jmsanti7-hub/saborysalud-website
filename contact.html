@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Sabor y Salud</title>
-  <meta name="description" content="Connect with Sabor y Salud to ask questions about wellness, movement, and nutrition support.">
-  <meta name="keywords" content="contact, Sabor y Salud, wellness coach, email form">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header class="site-header">
@@ -18,9 +15,9 @@
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="wellness.html">Wellness Hub</a>
+  <a href="wellness.html">Wellness</a>
+  <a href="progress.html">Progress</a>
   <a href="recipes.html">Recipes</a>
-  <a href="progress.html">Progress Tracker</a>
   <a href="contact.html">Contact</a>
 </nav>
 
@@ -29,40 +26,36 @@
   <h2>Contact</h2>
 
   <section class="card">
+    <p><em>“No tienes que hacerlo sola. Asking for support is strength.”</em></p>
     <p>
-      Have a question about recipes, movement, or how to start your own wellness
-      journey? Use the form below to reach out.
-    </p>
-    <p>
-      You can also email me directly at
-      <a href="mailto:saborysalud@example.com">saborysalud@example.com</a>.
+      Have a question about workouts, nutrition, or how to start your own
+      wellness journey? Use the form below to reach out.
     </p>
   </section>
 
   <section class="card">
-    <h3>Contact Form</h3>
-
+    <h3>Send a Message</h3>
     <form action="#" method="post">
-      <label for="name">Name</label>
+      <label for="name">Name / Nombre</label>
       <input id="name" name="name" type="text" required>
 
       <label for="email">Email</label>
       <input id="email" name="email" type="email" required>
 
-      <label for="topic">Topic</label>
+      <label for="topic">Topic / Tema</label>
       <select id="topic" name="topic" required>
         <option value="">Select a topic</option>
-        <option value="recipes">Recipes</option>
-        <option value="workouts">Workout support</option>
-        <option value="coaching">Future coaching interest</option>
-        <option value="other">Other</option>
+        <option value="workouts">Workouts</option>
+        <option value="nutrition">Nutrition</option>
+        <option value="mindset">Mindset & Motivation</option>
+        <option value="other">Other / Otro</option>
       </select>
 
-      <label for="message">Message</label>
+      <label for="message">Message / Mensaje</label>
       <textarea id="message" name="message" rows="4"
         placeholder="Tell me a bit about your goals or questions"></textarea>
 
-      <button type="submit" class="btn btn-primary">Send (Demo)</button>
+      <button type="submit" class="btn btn-primary">Send</button>
     </form>
   </section>
 
@@ -70,9 +63,6 @@
 
 <footer>
   <p>&copy; 2025 Sabor y Salud. All rights reserved.</p>
-  <p>For more wellness resources, visit
-    <a href="https://www.asu.edu" target="_blank">Arizona State University</a>.
-  </p>
 </footer>
 
 </body>
