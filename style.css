@@ -1,26 +1,19 @@
-/* =========================================
-   SABOR Y SALUD – COZY SAGE + SAND THEME
-   ========================================= */
-
 /* ---------- Color System ---------- */
 
 :root {
-  /* Neutrals */
-  --bg-main: #f6f1e9;       /* soft sand page background */
-  --bg-card: #ffffff;       /* card background */
-  --border-soft: #e2d9cf;   /* gentle border */
-  --text-main: #2f2f2f;     /* dark neutral */
-  --text-muted: #6b6460;    /* taupe */
-
-  /* Accents */
-  --accent-sage: #a7bba3;        /* soft sage */
-  --accent-sage-deep: #8ea28a;   /* deeper sage */
-  --accent-clay: #b67c63;        /* warm clay */
-  --accent-clay-dark: #925e45;   /* deeper clay */
-  --accent-brown: #5a4636;       /* rich brown for titles */
+  --bg-main: #f6f1e9;       /* soft sand */
+  --bg-card: #ffffff;
+  --border-soft: #e2d9cf;
+  --text-main: #2f2f2f;
+  --text-muted: #6b6460;
+  --accent-sage: #a7bba3;
+  --accent-sage-deep: #8ea28a;
+  --accent-clay: #b67c63;
+  --accent-clay-dark: #925e45;
+  --accent-brown: #4b3a2d;
 }
 
-/* ---------- Base Page Styling ---------- */
+/* ---------- Base ---------- */
 
 *,
 *::before,
@@ -31,13 +24,20 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-main);
   margin: 0;
   padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
 }
 
-/* ---------- Header ---------- */
+/* Images scale nicely */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Header & Nav ---------- */
 
 .site-header {
   background: linear-gradient(135deg, #f0e4d7, #e4d3c3);
@@ -60,8 +60,6 @@ body {
   color: var(--text-muted);
 }
 
-/* ---------- Navigation ---------- */
-
 nav {
   background-color: #ffffff;
   border-bottom: 1px solid var(--border-soft);
@@ -75,14 +73,14 @@ nav {
 nav a {
   text-decoration: none;
   color: var(--text-main);
-  margin: 0 14px;
+  margin: 0 12px;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.5px;
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 999px;      /* soft pill blocks */
   transition: background-color 0.18s ease, color 0.18s ease,
-    box-shadow 0.18s ease, transform 0.1s ease;
+              box-shadow 0.18s ease, transform 0.1s ease;
 }
 
 nav a:hover {
@@ -92,15 +90,15 @@ nav a:hover {
   transform: translateY(-1px);
 }
 
-/* ---------- Main Layout Container ---------- */
+/* ---------- Main Container ---------- */
 
 .container {
   width: 88%;
   max-width: 960px;
   margin: 32px auto 42px;
   background-color: var(--bg-card);
-  padding: 30px 30px 40px;
-  border-radius: 24px;
+  padding: 28px 26px 36px;
+  border-radius: 24px;       /* block without rough, harsh edges */
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
 }
 
@@ -111,37 +109,25 @@ h2 {
   border-bottom: 1px solid var(--border-soft);
   padding-bottom: 8px;
   margin-top: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   color: var(--accent-brown);
   font-family: Georgia, "Times New Roman", serif;
 }
 
 h3 {
-  margin-top: 22px;
+  margin-top: 20px;
   font-size: 20px;
   color: var(--accent-clay-dark);
   font-family: Georgia, "Times New Roman", serif;
 }
 
-h4 {
-  margin-top: 18px;
-  font-size: 17px;
-  color: var(--accent-brown);
-}
-
-p,
-li {
+p, li {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-main);
 }
 
-ul,
-ol {
-  padding-left: 22px;
-}
-
-/* ---------- Cozy Card Sections ---------- */
+/* ---------- Cards ---------- */
 
 .card {
   background-color: #fbfaf8;
@@ -149,14 +135,10 @@ ol {
   border-radius: 20px;
   padding: 18px 20px 20px;
   margin-top: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
 }
 
-.card h3 {
-  margin-top: 0;
-}
-
-/* Flex card for About + photo */
+/* Flex card: image + text side by side */
 .card-flex {
   display: flex;
   flex-wrap: wrap;
@@ -164,18 +146,76 @@ ol {
   gap: 20px;
 }
 
-.card-flex .card-text {
-  flex: 1 1 230px;
-}
-
 .card-flex .card-media {
   flex: 0 0 260px;
 }
 
-/* ---------- Buttons ---------- */
+.card-flex .card-text {
+  flex: 1 1 230px;
+}
 
-button,
-.btn {
+/* ---------- Images ---------- */
+
+.about-photo {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.full-width-image {
+  border-radius: 18px;
+  margin-top: 16px;
+  margin-bottom: 18px;
+}
+
+/* Recipe gallery */
+.recipe-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+
+.recipe-photo {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Forms & Buttons ---------- */
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--accent-brown);
+}
+
+input, textarea, select {
+  width: 100%;
+  max-width: 440px;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #d4cec7;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 14px;
+  background-color: #fdfbf8;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+              background-color 0.18s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-sage);
+  box-shadow: 0 0 0 3px rgba(167, 187, 163, 0.25);
+  background-color: #ffffff;
+}
+
+button, .btn {
   display: inline-block;
   padding: 10px 22px;
   border-radius: 999px;
@@ -186,77 +226,22 @@ button,
   cursor: pointer;
   margin-top: 12px;
   transition: background-color 0.2s ease, transform 0.1s ease,
-    box-shadow 0.2s ease;
+              box-shadow 0.2s ease;
 }
 
-/* Primary clay button */
-.btn-primary,
-button[type="submit"] {
+.btn-primary, button[type="submit"] {
   background-color: var(--accent-clay);
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(182, 124, 99, 0.4);
 }
 
-.btn-primary:hover,
-button[type="submit"]:hover {
+.btn-primary:hover, button[type="submit"]:hover {
   background-color: var(--accent-clay-dark);
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(182, 124, 99, 0.55);
 }
 
-/* Outline sage button */
-.btn-outline {
-  background-color: transparent;
-  color: var(--accent-brown);
-  border: 1px solid var(--accent-sage);
-  box-shadow: none;
-}
-
-.btn-outline:hover {
-  background-color: #f1f3ef;
-}
-
-/* ---------- Inputs & Textareas ---------- */
-
-input,
-textarea,
-select {
-  width: 100%;
-  max-width: 440px;
-  padding: 10px;
-  margin-top: 6px;
-  border: 1px solid #d4cec7;
-  border-radius: 12px;
-  font-family: inherit;
-  font-size: 14px;
-  background-color: #fdfbf8;
-  box-sizing: border-box;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease,
-    background-color 0.18s ease;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: var(--accent-sage);
-  box-shadow: 0 0 0 3px rgba(167, 187, 163, 0.25);
-  background-color: #ffffff;
-}
-
-textarea {
-  resize: vertical;
-}
-
-label {
-  font-weight: 600;
-  display: block;
-  margin-top: 12px;
-  font-size: 14px;
-  color: var(--accent-brown);
-}
-
-/* ---------- Tables (Workout + Tracker) ---------- */
+/* ---------- Tables (for workout / progress) ---------- */
 
 table {
   width: 100%;
@@ -265,8 +250,7 @@ table {
   font-size: 15px;
 }
 
-th,
-td {
+th, td {
   border: 1px solid var(--border-soft);
   padding: 8px 10px;
   text-align: left;
@@ -281,84 +265,6 @@ tr:nth-child(even) td {
   background-color: #fbf8f3;
 }
 
-/* Placeholder style for JS tracker entries if needed */
-.tracker-entry {
-  background-color: #f9f8f6;
-  padding: 12px 14px;
-  border: 1px solid var(--border-soft);
-  border-radius: 16px;
-  margin-top: 10px;
-}
-
-/* ---------- Images & Media ---------- */
-
-.full-width-image {
-  width: 100%;
-  display: block;
-  border-radius: 18px;
-  margin-top: 16px;
-  margin-bottom: 18px;
-}
-
-.about-photo {
-  width: 100%;
-  max-width: 260px;
-  border-radius: 18px;
-  display: block;
-}
-
-/* Recipe images */
-
-.recipe-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-}
-
-.recipe-photo {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 18px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
-  object-fit: cover;
-}
-
-/* Progress page graphic */
-
-.progress-image-wrapper {
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.progress-image-wrapper img {
-  max-width: 380px;
-  width: 100%;
-  border-radius: 18px;
-}
-
-/* Video styling */
-
-.video-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  align-items: center;
-}
-
-.wellness-video,
-.video-card video {
-  flex: 1 1 260px;
-  max-width: 380px;
-  width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
-}
-
-.video-card-text {
-  flex: 1 1 220px;
-}
-
 /* ---------- Footer ---------- */
 
 footer {
@@ -366,10 +272,6 @@ footer {
   font-size: 14px;
   color: #777;
   margin: 0 0 24px;
-}
-
-footer p {
-  margin: 6px 0;
 }
 
 footer a {
@@ -381,7 +283,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Responsive Tweaks ---------- */
+/* ---------- Responsive ---------- */
 
 @media (max-width: 800px) {
   .container {
@@ -389,8 +291,7 @@ footer a:hover {
     padding: 24px 18px 30px;
   }
 
-  .card-flex,
-  .video-card {
+  .card-flex {
     flex-direction: column;
   }
 
@@ -405,13 +306,5 @@ footer a:hover {
     margin: 4px 6px;
     font-size: 14px;
     padding: 5px 10px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  .card {
-    padding: 16px 14px 18px;
   }
 }
