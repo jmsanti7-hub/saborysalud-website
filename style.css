@@ -184,6 +184,30 @@ p, li {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
+/* ---------- Video Section ---------- */
+
+.video-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.video-media {
+  flex: 1 1 260px;
+}
+
+.video-text {
+  flex: 1 1 220px;
+}
+
+.wellness-video {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
 /* ---------- Forms & Buttons ---------- */
 
 label {
@@ -241,7 +265,7 @@ button, .btn {
   box-shadow: 0 6px 16px rgba(182, 124, 99, 0.55);
 }
 
-/* ---------- Tables (for workout / progress) ---------- */
+/* ---------- Tables ---------- */
 
 table {
   width: 100%;
@@ -291,7 +315,8 @@ footer a:hover {
     padding: 24px 18px 30px;
   }
 
-  .card-flex {
+  .card-flex,
+  .video-section {
     flex-direction: column;
   }
 
