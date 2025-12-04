@@ -2,147 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Progress - Sabor y Salud</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progress Tracker - Sabor y Salud</title>
-  <meta name="description" content="Use the Sabor y Salud progress tracker to log workouts, nutrition, mood, and reflections and celebrate small wins over time.">
-  <meta name="keywords" content="progress tracker, fitness log, workout plan, discipline and consistency">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header class="site-header">
   <h1>Sabor y Salud</h1>
-  <p>Track your growth. Celebrate your wins.</p>
+  <p>Growth, not perfection. Crecer un poquito cada día.</p>
 </header>
 
 <nav>
   <a href="index.html">Home</a>
-  <a href="wellness.html">Wellness Hub</a>
+  <a href="wellness.html">Wellness</a>
+  <a href="progress.html">Progress</a>
   <a href="recipes.html">Recipes</a>
-  <a href="progress.html">Progress Tracker</a>
   <a href="contact.html">Contact</a>
 </nav>
 
 <main class="container">
 
-  <h2>Weekly Workout Plan</h2>
+  <h2>Workout Plan</h2>
 
   <section class="card">
+    <p><em>“Discipline and consistency build the version of you that you dream about.”</em></p>
     <p>
-      This is a simple, flexible weekly structure you can follow. Adjust sets,
-      reps, and exercises based on your equipment and energy.
+      This 4-day split focuses on functional strength, conditioning, and mobility.
+      Adjust sets and reps based on your experience and energy.
     </p>
-
-    <div class="progress-image-wrapper">
-      <img src="discipline.jpg" alt="Graphic that says discipline and consistency" class="full-width-image">
-    </div>
 
     <table>
       <thead>
         <tr>
           <th>Day</th>
           <th>Focus</th>
-          <th>Example</th>
+          <th>Example Exercises</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Monday</td>
-          <td>Lower Body Strength</td>
-          <td>Squats, lunges, glute bridges, calf raises</td>
+          <td>Day 1</td>
+          <td>Lower Body + Core</td>
+          <td>Squats, reverse lunges, glute bridges, calf raises, planks</td>
         </tr>
         <tr>
-          <td>Tuesday</td>
-          <td>Upper Body Strength</td>
-          <td>Push-ups, rows, shoulder presses, bicep curls</td>
+          <td>Day 2</td>
+          <td>Upper Body Push/Pull</td>
+          <td>Push-ups, rows, shoulder presses, bicep curls, tricep dips</td>
         </tr>
         <tr>
-          <td>Wednesday</td>
-          <td>Active Recovery</td>
-          <td>Walk, stretching, gentle yoga</td>
+          <td>Day 3</td>
+          <td>Lower Body Power + Mobility</td>
+          <td>Deadlifts, step-ups, lateral lunges, hip flexor stretches</td>
         </tr>
         <tr>
-          <td>Thursday</td>
-          <td>Full-Body Strength</td>
-          <td>Deadlifts, rows, squats, core work</td>
-        </tr>
-        <tr>
-          <td>Friday</td>
-          <td>Cardio + Core</td>
-          <td>Intervals (walk/jog), planks, dead bugs</td>
-        </tr>
-        <tr>
-          <td>Saturday</td>
-          <td>Fun Movement</td>
-          <td>Dancing, hiking, sports, long walk</td>
-        </tr>
-        <tr>
-          <td>Sunday</td>
-          <td>Rest</td>
-          <td>Stretch, relax, reset for the week</td>
+          <td>Day 4</td>
+          <td>Conditioning + Core</td>
+          <td>Intervals (walk/jog), mountain climbers, dead bugs, bird dogs</td>
         </tr>
       </tbody>
     </table>
   </section>
 
-  <h2>Progress Tracker</h2>
+  <h2>Track Your Progress</h2>
 
   <section class="card">
     <p>
-      Use this tracker to log your movement, nutrition, mood, and reflections.
-      This is just for you — small wins still count.
+      Use this space to log your wins: how you moved, how you ate, and how you felt.
+      Even one sentence a day counts.
     </p>
-
-    <form id="tracker-form" action="#" method="post">
-      <label for="date">Date</label>
-      <input type="date" id="date" name="date" required>
-
-      <label for="movement">Movement</label>
-      <input type="text" id="movement" name="movement" placeholder="Leg day, walk, yoga, etc." required>
-
-      <label for="nutrition">Nutrition</label>
-      <input type="text" id="nutrition" name="nutrition" placeholder="High-protein dinner, more veggies, etc." required>
-
-      <label for="mood">Mood / Energy</label>
-      <input type="text" id="mood" name="mood" placeholder="Strong, tired, proud, etc." required>
-
-      <label for="reflection">Reflection (optional)</label>
-      <textarea id="reflection" name="reflection" rows="3" placeholder="What did you notice about today?"></textarea>
-
-      <button type="submit" class="btn btn-primary">Add Entry</button>
-      <button type="button" id="clear-tracker" class="btn btn-outline">Clear All Entries</button>
-    </form>
-
-    <p id="no-entries-message" style="font-size: 14px; color: #6b6460; margin-top: 12px;">
-      No entries yet. Log your first win to see it here.
+    <p>
+      You can create a simple table or bullet list in your notebook, or build your
+      own progress tracker later with JavaScript and localStorage as you advance in
+      your coding skills.
     </p>
-
-    <table id="tracker-table">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Movement</th>
-          <th>Nutrition</th>
-          <th>Mood</th>
-          <th>Reflection</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Filled by JavaScript -->
-      </tbody>
-    </table>
   </section>
 
 </main>
 
 <footer>
   <p>&copy; 2025 Sabor y Salud. All rights reserved.</p>
-  <p>For more wellness resources, visit
-    <a href="https://www.asu.edu" target="_blank">Arizona State University</a>.
-  </p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
